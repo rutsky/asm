@@ -1,0 +1,134 @@
+GAS LISTING /tmp/ccBfBCTB.s 			page 1
+
+
+   1              		.file	"main.cpp"
+   9              	.Ltext0:
+  10              		.p2align 4,,15
+  11              	.globl _Z9factoriali
+  13              	_Z9factoriali:
+  14              	.LFB2:
+  15              		.file 1 "main.cpp"
+   1:main.cpp      **** int factorial( int x )
+  16              		.loc 1 1 0
+  17              	.LVL0:
+   2:main.cpp      **** {
+   3:main.cpp      ****   if (x == 0)
+  18              		.loc 1 3 0
+  19 0000 85FF     		testl	%edi, %edi
+  20 0002 B8010000 		movl	$1, %eax
+  20      00
+  21 0007 740F     		je	.L3
+  22 0009 0F1F8000 		.p2align 4,,10
+  22      000000
+  23              		.p2align 3
+  24              	.L4:
+   4:main.cpp      ****     return 1;
+   5:main.cpp      ****   else
+   6:main.cpp      ****     return x * factorial(x - 1);
+  25              		.loc 1 6 0
+  26 0010 0FAFC7   		imull	%edi, %eax
+  27              		.loc 1 3 0
+  28 0013 83EF01   		subl	$1, %edi
+  29              	.LVL1:
+  30 0016 75F8     		jne	.L4
+  31              	.L3:
+   7:main.cpp      **** }
+  32              		.loc 1 7 0
+  33 0018 F3       		rep
+  34 0019 C3       		ret
+  35              	.LFE2:
+  37 001a 660F1F44 		.p2align 4,,15
+  37      0000
+  38              	.globl main
+  40              	main:
+  41              	.LFB3:
+   8:main.cpp      **** 
+   9:main.cpp      **** int main( int argc, char *argv[] )
+  42              		.loc 1 9 0
+  43              	.LVL2:
+  44              	.LBB4:
+  45              	.LBB5:
+  46              		.loc 1 3 0
+  47 0020 85FF     		testl	%edi, %edi
+  48 0022 B8010000 		movl	$1, %eax
+  48      00
+  49 0027 740F     		je	.L9
+  50 0029 0F1F8000 		.p2align 4,,10
+  50      000000
+  51              		.p2align 3
+  52              	.L10:
+  53              		.loc 1 6 0
+GAS LISTING /tmp/ccBfBCTB.s 			page 2
+
+
+  54 0030 0FAFC7   		imull	%edi, %eax
+  55              		.loc 1 3 0
+  56 0033 83EF01   		subl	$1, %edi
+  57              	.LVL3:
+  58 0036 75F8     		jne	.L10
+  59              	.L9:
+  60              	.LBE5:
+  61              	.LBE4:
+  10:main.cpp      **** {
+  11:main.cpp      ****   return factorial(argc);
+  12:main.cpp      **** }
+  62              		.loc 1 12 0
+  63 0038 F3       		rep
+  64 0039 C3       		ret
+  65              	.LFE3:
+ 101              	.Lframe1:
+ 102 0000 1C000000 		.long	.LECIE1-.LSCIE1
+ 103              	.LSCIE1:
+ 104 0004 00000000 		.long	0x0
+ 105 0008 01       		.byte	0x1
+ 106              	.globl __gxx_personality_v0
+ 107 0009 7A505200 		.string	"zPR"
+ 108 000d 01       		.uleb128 0x1
+ 109 000e 78       		.sleb128 -8
+ 110 000f 10       		.byte	0x10
+ 111 0010 06       		.uleb128 0x6
+ 112 0011 03       		.byte	0x3
+ 113 0012 00000000 		.long	__gxx_personality_v0
+ 114 0016 03       		.byte	0x3
+ 115 0017 0C       		.byte	0xc
+ 116 0018 07       		.uleb128 0x7
+ 117 0019 08       		.uleb128 0x8
+ 118 001a 90       		.byte	0x90
+ 119 001b 01       		.uleb128 0x1
+ 120 001c 00000000 		.align 8
+ 121              	.LECIE1:
+ 122              	.LSFDE1:
+ 123 0020 14000000 		.long	.LEFDE1-.LASFDE1
+ 124              	.LASFDE1:
+ 125 0024 24000000 		.long	.LASFDE1-.Lframe1
+ 126 0028 00000000 		.long	.LFB2
+ 127 002c 1A000000 		.long	.LFE2-.LFB2
+ 128 0030 00       		.uleb128 0x0
+ 129 0031 00000000 		.align 8
+ 129      000000
+ 130              	.LEFDE1:
+ 131              	.LSFDE3:
+ 132 0038 14000000 		.long	.LEFDE3-.LASFDE3
+ 133              	.LASFDE3:
+ 134 003c 3C000000 		.long	.LASFDE3-.Lframe1
+ 135 0040 00000000 		.long	.LFB3
+ 136 0044 1A000000 		.long	.LFE3-.LFB3
+ 137 0048 00       		.uleb128 0x0
+ 138 0049 00000000 		.align 8
+ 138      000000
+ 139              	.LEFDE3:
+ 140              		.text
+GAS LISTING /tmp/ccBfBCTB.s 			page 3
+
+
+ 141              	.Letext0:
+GAS LISTING /tmp/ccBfBCTB.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 main.cpp
+     /tmp/ccBfBCTB.s:13     .text:0000000000000000 _Z9factoriali
+     /tmp/ccBfBCTB.s:40     .text:0000000000000020 main
+
+UNDEFINED SYMBOLS
+__gxx_personality_v0

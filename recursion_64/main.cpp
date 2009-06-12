@@ -6,7 +6,7 @@ int factorial( int x )
     return x * factorial(x - 1);
 }
 
-int main()
+int main( int argc, char *argv[] )
 {
-  return factorial(5);
+  return factorial(argc);
 }

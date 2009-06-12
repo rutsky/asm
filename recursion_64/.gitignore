@@ -1,2 +1,7 @@
 *.o
-binary
+binary_O0
+binary_O1
+binary_O2
+binary_O3
+
+
