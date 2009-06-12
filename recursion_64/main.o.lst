@@ -1,0 +1,147 @@
+GAS LISTING /tmp/ccnqe6ZG.s 			page 1
+
+
+   1              		.file	"main.cpp"
+   9              	.Ltext0:
+  10              	.globl _Z9factoriali
+  12              	_Z9factoriali:
+  13              	.LFB2:
+  14              		.file 1 "main.cpp"
+   1:main.cpp      **** int factorial( int x )
+  15              		.loc 1 1 0
+  16 0000 55       		pushq	%rbp
+  17              	.LCFI0:
+  18 0001 4889E5   		movq	%rsp, %rbp
+  19              	.LCFI1:
+  20 0004 4883EC10 		subq	$16, %rsp
+  21              	.LCFI2:
+  22 0008 897DFC   		movl	%edi, -4(%rbp)
+   2:main.cpp      **** {
+   3:main.cpp      ****   if (x == 0)
+  23              		.loc 1 3 0
+  24 000b 837DFC00 		cmpl	$0, -4(%rbp)
+  25 000f 7509     		jne	.L2
+   4:main.cpp      ****     return 1;
+  26              		.loc 1 4 0
+  27 0011 C745F801 		movl	$1, -8(%rbp)
+  27      000000
+  28 0018 EB14     		jmp	.L3
+  29              	.L2:
+   5:main.cpp      ****   else
+   6:main.cpp      ****     return x * factorial(x - 1);
+  30              		.loc 1 6 0
+  31 001a 8B45FC   		movl	-4(%rbp), %eax
+  32 001d 8D78FF   		leal	-1(%rax), %edi
+  33 0020 E8000000 		call	_Z9factoriali
+  33      00
+  34 0025 89C2     		movl	%eax, %edx
+  35 0027 0FAF55FC 		imull	-4(%rbp), %edx
+  36 002b 8955F8   		movl	%edx, -8(%rbp)
+  37              	.L3:
+  38 002e 8B45F8   		movl	-8(%rbp), %eax
+   7:main.cpp      **** }
+  39              		.loc 1 7 0
+  40 0031 C9       		leave
+  41 0032 C3       		ret
+  42              	.LFE2:
+  44              	.globl main
+  46              	main:
+  47              	.LFB3:
+   8:main.cpp      **** 
+   9:main.cpp      **** int main()
+  48              		.loc 1 9 0
+  49 0033 55       		pushq	%rbp
+  50              	.LCFI3:
+  51 0034 4889E5   		movq	%rsp, %rbp
+  52              	.LCFI4:
+  10:main.cpp      **** {
+  11:main.cpp      ****   return factorial(5);
+  53              		.loc 1 11 0
+  54 0037 BF050000 		movl	$5, %edi
+GAS LISTING /tmp/ccnqe6ZG.s 			page 2
+
+
+  54      00
+  55 003c E8000000 		call	_Z9factoriali
+  55      00
+  12:main.cpp      **** }
+  56              		.loc 1 12 0
+  57 0041 C9       		leave
+  58 0042 C3       		ret
+  59              	.LFE3:
+ 115              	.Lframe1:
+ 116 0000 1C000000 		.long	.LECIE1-.LSCIE1
+ 117              	.LSCIE1:
+ 118 0004 00000000 		.long	0x0
+ 119 0008 01       		.byte	0x1
+ 120              	.globl __gxx_personality_v0
+ 121 0009 7A505200 		.string	"zPR"
+ 122 000d 01       		.uleb128 0x1
+ 123 000e 78       		.sleb128 -8
+ 124 000f 10       		.byte	0x10
+ 125 0010 06       		.uleb128 0x6
+ 126 0011 03       		.byte	0x3
+ 127 0012 00000000 		.long	__gxx_personality_v0
+ 128 0016 03       		.byte	0x3
+ 129 0017 0C       		.byte	0xc
+ 130 0018 07       		.uleb128 0x7
+ 131 0019 08       		.uleb128 0x8
+ 132 001a 90       		.byte	0x90
+ 133 001b 01       		.uleb128 0x1
+ 134 001c 00000000 		.align 8
+ 135              	.LECIE1:
+ 136              	.LSFDE1:
+ 137 0020 1C000000 		.long	.LEFDE1-.LASFDE1
+ 138              	.LASFDE1:
+ 139 0024 24000000 		.long	.LASFDE1-.Lframe1
+ 140 0028 00000000 		.long	.LFB2
+ 141 002c 33000000 		.long	.LFE2-.LFB2
+ 142 0030 00       		.uleb128 0x0
+ 143 0031 41       		.byte	0x4
+ 144              		.long	.LCFI0-.LFB2
+ 145 0032 0E       		.byte	0xe
+ 146 0033 10       		.uleb128 0x10
+ 147 0034 86       		.byte	0x86
+ 148 0035 02       		.uleb128 0x2
+ 149 0036 43       		.byte	0x4
+ 150              		.long	.LCFI1-.LCFI0
+ 151 0037 0D       		.byte	0xd
+ 152 0038 06       		.uleb128 0x6
+ 153 0039 00000000 		.align 8
+ 153      000000
+ 154              	.LEFDE1:
+ 155              	.LSFDE3:
+ 156 0040 1C000000 		.long	.LEFDE3-.LASFDE3
+ 157              	.LASFDE3:
+ 158 0044 44000000 		.long	.LASFDE3-.Lframe1
+ 159 0048 00000000 		.long	.LFB3
+ 160 004c 10000000 		.long	.LFE3-.LFB3
+ 161 0050 00       		.uleb128 0x0
+ 162 0051 41       		.byte	0x4
+GAS LISTING /tmp/ccnqe6ZG.s 			page 3
+
+
+ 163              		.long	.LCFI3-.LFB3
+ 164 0052 0E       		.byte	0xe
+ 165 0053 10       		.uleb128 0x10
+ 166 0054 86       		.byte	0x86
+ 167 0055 02       		.uleb128 0x2
+ 168 0056 43       		.byte	0x4
+ 169              		.long	.LCFI4-.LCFI3
+ 170 0057 0D       		.byte	0xd
+ 171 0058 06       		.uleb128 0x6
+ 172 0059 00000000 		.align 8
+ 172      000000
+ 173              	.LEFDE3:
+ 174              		.text
+ 175              	.Letext0:
+GAS LISTING /tmp/ccnqe6ZG.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 main.cpp
+     /tmp/ccnqe6ZG.s:12     .text:0000000000000000 _Z9factoriali
+     /tmp/ccnqe6ZG.s:46     .text:0000000000000033 main
+
+UNDEFINED SYMBOLS
+__gxx_personality_v0
